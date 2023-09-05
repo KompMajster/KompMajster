@@ -329,6 +329,10 @@ margin-top: -5%;
     left: 46%;
     top: 82%;
 }
+	img.img-fluid.rounded 
+{
+    display: none;
+}
 }
 .flex-shrink-0.btn-lg-square.rounded-circle.bg-light {
     background: -webkit-linear-gradient(315deg, #00ccff 0%, #d400d4 74%);
@@ -365,6 +369,7 @@ margin-top: -5%;
         margin-top: -80px;
         z-index: 1;
     }
+
 }
 .flex-shrink-0.btn-lg-square.rounded-circle.bg-light {
     width: 48px;
@@ -466,9 +471,8 @@ p.mb-4 {
     color: #dee2e6;
 }
 /*** Facts & Quote ***/
-.facts,
-.quote {
-   background: -webkit-linear-gradient(315deg, #00ccff 0%, #d400d4 74%);
+.facts{
+   background: -webkit-linear-gradient(315deg, #00ccff 0%, #d400d4 74%) !important; 
   background-size: 200% 200%; /* Dodajemy 200% wielkość tła, aby mieć przestrzeń na animację */
   animation: gradientAnimation 10s linear infinite;
 }
@@ -586,12 +590,12 @@ p.mb-4 {
 }
 
 .service-item .service-text .btn {
-    width: 31px;
-    height: 31px;
+    width: 25px;
+    height: 25px;
     display: inline-flex;
     align-items: center;
     color: var(--dark);
-    background: var(--light);
+
     white-space: nowrap;
     overflow: hidden;
     transition: .3s;
