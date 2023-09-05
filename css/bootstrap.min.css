@@ -3389,7 +3389,7 @@ textarea.form-control-lg {
 }
 
 .btn-sm,.btn-group-sm>.btn {
-    padding: .25rem .5rem;
+    padding: .1rem .4rem;
     font-size: .875rem;
     border-radius: 4px
 }
