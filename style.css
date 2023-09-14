@@ -695,3 +695,12 @@ i.fa.fa-toolbox {
     background: var(--primary);
     color: var(--light);
 }
+@media screen and (max-width: 1270px)
+{
+    .portfolio-inner .portfolio-text
+	{
+		flex-direction: nowrap
+	}
+
+}
+
