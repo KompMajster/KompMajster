@@ -277,7 +277,7 @@ margin-top: -5%;
 	width: 30px;
 	border: 2px solid white;
 	position: absolute;
-	left: 46%;
+	left: 49.2%;
 	bottom: 15%;
 	border-radius: 50px;
 	cursor: pointer;
@@ -695,10 +695,6 @@ i.fa.fa-toolbox {
     background: var(--primary);
     color: var(--light);
 }
-.team-item:hover .team-img .team-social {
-    transition-delay: .3s;
-    opacity: 1;
-}
 @media screen and (max-width: 1270px)
 {
     .portfolio-inner .portfolio-text
@@ -708,95 +704,3 @@ i.fa.fa-toolbox {
 
 }
 
-
-/*** Testimonial ***/
-.testimonial-item {
-    position: relative;
-    text-align: center;
-    padding-top: 30px;
-
-}
-
-.testimonial-item .testimonial-text {
-    position: relative;
-    text-align: center;
-	
-}
-
-.testimonial-item .testimonial-text .btn-square {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-
-
-.testimonial-carousel .owl-item img {
-    margin: 0 auto;
-    width: 100px;
-    height: 100px;
-}
-
-.testimonial-carousel .owl-dots {
-    margin-top: 25px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-.testimonial-carousel .owl-dot {
-    position: relative;
-    display: inline-block;
-    margin: 0 5px;
-    width: 30px;
-    height: 30px;
-    border: 1px solid var(--light);
-    border-radius: 30px;
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-dot::after {
-    position: absolute;
-    content: "";
-    width: 16px;
-    height: 16px;
-    top: 6px;
-    left: 6px;
-    border-radius: 16px;
-    background: var(#d400d4);
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-dot.active {
-    border-color: #d400d4;
-}
-
-.testimonial-carousel .owl-dot.active::after {
-    background: #fff;
-}
-.btn-square.rounded-circle {
-	    font-size: 35px;
-    line-height: 85px;
-    width: 85px;
-    height: 85px;
-    margin: 0 auto 60px;
-    border-radius: 50%;
-    border: 2px solid #00ccff !important;
-    position: relative;
-    z-index: 1;
-}
-.btn-square.rounded-circle::before {
-	    content: "";
-    background: #fff !important;
-    border-radius: 50%;
-    box-shadow: 0 5px 8px rgba(0,0,0,0.4);
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    z-index: -1;
-}
