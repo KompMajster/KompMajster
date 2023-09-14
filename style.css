@@ -704,3 +704,62 @@ i.fa.fa-toolbox {
 
 }
 
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: var(--light);
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--primary);
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.copyright {
+    color: var(--light);
+    background: #fff;
+}
+
+.copyright a {
+    color: #FFFFFF;
+}
+
+.copyright a:hover {
+    color: var(--primary);
+}
+
+.backgroundfooter {
+    position: relative;
+    background-image: url(images/footer.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 85%;
+    z-index: 0;
+}
+
+.backgroundfooter::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Używamy rgba do ustawienia przezroczystego koloru tła */
+    z-index: -1;
+}
+
