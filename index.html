@@ -227,58 +227,24 @@
 	    	  <!-- Projects Start -->
  <section id="projects">
     <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-5 mb-5">Nasze Ukończone Projekty</h1>
-            </div>
-            <div class="row wow fadeInUp" data-wow-delay="0.3s">
-                <div class="col-12 text-center">
-                    <ul class="list-inline rounded mb-5" id="portfolio-flters">
-                        <li class="mx-2 active" data-filter="*">Wszystkie</li>
-                        <li class="mx-2" data-filter=".first">Ukończone Projekty</li>
-                        <li class="mx-2" data-filter=".second">Bieżące Projekty</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row g-4 portfolio-container">
-                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="portfolio-inner rounded">
-                        <img class="img-fluid" src="images/2.jpg" alt="">
-                        <div class="portfolio-text">
-                            <h4 class="text-white mb-4">Strona dla Kliniki Dentystycznej</h4>
-                            <div class="d-flex">
-                                <a class="btn btn-lg-square rounded-circle mx-2" href="images/12.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-lg-square rounded-circle mx-2" href="http://orthodream.pl/test"><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="portfolio-inner rounded">
-                        <img class="img-fluid" src="images/1.jpg" alt="">
-                        <div class="portfolio-text">
-                            <h4 class="text-white mb-4">Strona dla Labo Protetycznego</h4>
-                            <div class="d-flex">
-                                <a class="btn btn-lg-square rounded-circle mx-2" href="images/11.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-lg-square rounded-circle mx-2" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="portfolio-inner rounded">
-                        <img class="img-fluid" src="images/3.jpg" alt="">
-                        <div class="portfolio-text">
-                            <h4 class="text-white mb-4">Customowy Komputer</h4>
-                            <div class="d-flex">
-                                <a class="btn btn-lg-square rounded-circle mx-2" href="images/3.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-lg-square rounded-circle mx-2" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="gallerys wow fadeInUp" data-wow-delay="0.1s">
+<ul class="controls">
+<li class="buttons act" data-filter="wszystko">Wszystkie Projekty</li>
+<li class="buttons" data-filter="otwarcie">Ukończone</li>
+<li class="buttons" data-filter="pomieszczenia">Bieżące</li>
+</ul>
+<div class="image-container wow fadeInUp" data-wow-delay="0.1s"">
+<a href="images/11.jpg" class="image pomieszczenia">
+<img src="images/1.jpg" alt="">
+</a>
+<a href="images/12.jpg" class="image pomieszczenia">
+<img src="images/2.jpg" alt="">
+</a>
+<a href="images/3.jpg" class="image otwarcie">
+<img src="images/3.jpg" alt="">
+</a>
+</div>
+</div>
     </div>
 </section>
     <!-- Projects End -->
@@ -377,6 +343,7 @@
                         <a class="btn btn-square  rounded-circle me-2" href="https://www.facebook.com/bartek.chrobok.5"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-square  rounded-circle me-2" href="https://www.youtube.com/channel/UC06-fgRDJBlEtQK_daz60VQ"><i class="fab fa-youtube"></i></a>
                         <a class="btn btn-square  rounded-circle me-2" href="https://www.linkedin.com/in/bart%C5%82omiej-chrobok-3854aa166/"><i class="fab fa-linkedin-in"></i></a>
+						<a class="btn btn-square  rounded-circle me-2" href="https://github.com/KompMajster"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
 
@@ -468,7 +435,36 @@ IO.observe( el3 )
     speedAsDuration: true
 });
 </script>
-
+<script>
+  $(document).ready(function() {
+    $('.buttons').click(function() {
+      $(this).addClass('act').siblings().removeClass('act');
+      var filter = $(this).attr('data-filter');
+      if (filter == 'wszystko') {
+        $('.image').show(400);
+      } else {
+        $('.image').not('.' +filter).hide(200);
+        $('.image').filter('.' +filter).show(400);
+      }
+    });
+    $('.gallerys').magnificPopup({
+  delegate: 'a',
+  type: 'image',
+  gallery: {
+    enabled: true
+  },
+  callbacks: {
+    imageLoadComplete: function() {
+      var image = this.content.find('img');
+      if (image.width() > 800 || image.height() > 800) {
+        image.css('max-width', '800px');
+        image.css('max-height', '800px');
+      }
+    }
+  }
+});
+  });
+</script>
 <script>
 var images = document.querySelectorAll('.single-service img');
 
