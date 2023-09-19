@@ -640,7 +640,6 @@ i.fa.fa-toolbox {
 
 .portfolio-inner {
     position: relative;
-    overflow: hidden;
 }
 
 .portfolio-inner::before,
