@@ -330,7 +330,7 @@ margin-top: -5%;
 @media screen and (max-width: 1110px)
 {
 .scroll-down {
-    left: 46%;
+    left: 46% !important;
     top: 82%;
 }
 	img.img-fluid.rounded 
