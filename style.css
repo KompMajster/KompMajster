@@ -196,6 +196,10 @@ button.navbar-toggler {
   .logo-img {
     display: none; /* Hide the image-based logo on smaller screens */
   }
+  .logo-img img
+  {
+	width: 100%;
+  }
   .logo-text {
     display: inline-block /* Show the text-based logo on smaller screens */
   }
@@ -616,91 +620,22 @@ i.fa.fa-code {
 i.fa.fa-toolbox {
     margin-top: 20;
 }
-/*** Project Portfolio ***/
-#portfolio-flters {
-    display: inline-block;
-    background: var(--light);
-    padding: 10px 15px;
-}
 
-#portfolio-flters li {
-    display: inline-block;
-    font-weight: 500;
-    color: var(--primary);
-    cursor: pointer;
-    transition: .5s;
-    border-bottom: 2px solid transparent;
-}
-
-#portfolio-flters li:hover,
-#portfolio-flters li.active {
-    color: var(--dark);
-    border-color: var(--dark);
-}
-
-.portfolio-inner {
-    position: relative;
-
-}
-
-.portfolio-inner::before,
-.portfolio-inner::after {
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: -webkit-linear-gradient(315deg, #00ccff 0%, #d400d4 74%) !important; 
-	opacity: .5;
-    transition: .5s;
-}
-
-.portfolio-inner::after {
-    left: auto;
-    right: 0;
-}
-
-.portfolio-inner:hover::before,
-.portfolio-inner:hover::after {
-    width: 100%;
-}
-
-.portfolio-inner .portfolio-text {
+.portfolio-text {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: .5s;
+    z-index: 1;
     opacity: 0;
 }
 
-.portfolio-inner:hover .portfolio-text {
-    transition-delay: .3s;
-    opacity: 1;
-}
-
-.portfolio-inner .portfolio-text .btn {
-    background: var(--light);
-    color: var(--primary);
-}
-
-.portfolio-inner .portfolio-text .btn:hover {
-    background: var(--primary);
-    color: var(--light);
-}
-@media screen and (max-width: 1270px)
-{
-    .portfolio-inner .portfolio-text
-	{
-		flex-direction: nowrap
-	}
-
-}
 
 .footer .btn.btn-link {
     display: block;
@@ -760,6 +695,13 @@ i.fa.fa-toolbox {
     background-color: rgba(0, 0, 0, 0.8); /* Używamy rgba do ustawienia przezroczystego koloru tła */
     z-index: -1;
 }
+#portfolio-flters {
+    display: inline-block;
+    background: var(--light);
+    padding: 10px 15px;
+}
+
+
 .gallerys
 {
 	width: 100%;
@@ -789,15 +731,17 @@ i.fa.fa-toolbox {
 	cursor: pointer;
 	margin: 20px;
   border-radius: 5px;
- box-shadow: 0px 5px 15px 1px rgba(0,204,255);
+	
 	text-align: center;
 	padding: 0 10px;
+
 }
+
 .gallerys .controls .buttons.act
 {
 	 background: -webkit-linear-gradient(315deg, #00ccff 0%, #d400d4 74%) !important; 
 	color: #fff;
-	
+	  
 }
 .gallerys .image-container
 {
@@ -806,7 +750,7 @@ i.fa.fa-toolbox {
 	justify-content: center;
 	flex-wrap: wrap;
 }
-.gallerys .image-container .image
+.gallerys .image-container .imagese
 {
 	width: 350px;
 	height: 500px;
@@ -815,19 +759,19 @@ i.fa.fa-toolbox {
 	margin: 20px;
 }
 
-.gallerys .image-container .image img
+.gallerys .image-container .imagese img
 {
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
 	transition: all .3s ease-in-out;
 }
-.gallerys .image-container .image {
+.gallerys .image-container .imagese {
     position: relative;
 }
 
-.gallerys .image-container .image::before,
-.gallerys .image-container .image::after {
+.gallerys .image-container .imagese::before,
+.gallerys .image-container .imagese::after {
     position: absolute;
     content: "";
     width: 0;
@@ -839,14 +783,33 @@ i.fa.fa-toolbox {
     transition: .5s;
 }
 
-.gallerys .image-container .image::after {
+.gallerys .image-container .imagese::after {
     left: auto;
     right: 0;
 }
 
-.gallerys .image-container .image:hover::before,
-.gallerys .image-container .image:hover::after {
+.gallerys .image-container .imagese:hover::before,
+.gallerys .image-container .imagese:hover::after {
     width: 100%;
+}
+
+.gallerys .image-container .imagese:hover .portfolio-text {
+    transition-delay: .3s;
+    opacity: 1;
+}
+
+.gallerys .image-container .imagese .portfolio-text .btn {
+    background: var(--light);
+    color: var(--primary);
+}
+
+.gallerys .image-container .imagese .portfolio-text .btn:hover {
+    background: var(--primary);
+    color: var(--light);
+}
+.buttons.clicked {
+  transform: scale(1.1); /* Przykładowa animacja - możesz dostosować */
+  transition: transform 0.3s ease-in-out; /* Długość i styl animacji */
 }
 @media screen and (max-width: 1110px)
 {
@@ -856,4 +819,98 @@ i.fa.fa-toolbox {
 	 flex-basis: 100%;
   }
 }
+/*** Testimonial ***/
+.testimonial-item {
+    position: relative;
+    text-align: center;
+    padding-top: 30px;
 
+}
+
+.testimonial-item .testimonial-text {
+    position: relative;
+    text-align: center;
+	
+}
+
+.testimonial-item .testimonial-text .btn-square {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+.testimonial-carousel .owl-item img {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+}
+
+.testimonial-carousel .owl-dots {
+    margin-top: 25px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--light);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot::after {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    top: 6px;
+    left: 6px;
+    border-radius: 16px;
+    background: var(#d400d4);
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    border-color: #d400d4;
+}
+
+.testimonial-carousel .owl-dot.active::after {
+    background: #fff;
+}
+.btn-squares.rounded-circle {
+	    font-size: 35px;
+    line-height: 85px;
+    width: 85px;
+    height: 85px;
+    margin: 0 auto 60px;
+    border-radius: 50%;
+    border: 2px solid #00ccff !important;
+    position: relative;
+    z-index: 1;
+}
+.btn-squares.rounded-circle::before {
+	    content: "";
+    background: #fff !important;
+    border-radius: 50%;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.4);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    z-index: -1;
+}
+img.rounded-circle.mb-3 {
+    width: 30% !important;
+
+}
